@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Blog</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    header, .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1em 0;
+      text-align: center;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5em 1em;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav li {
+      margin: 0 1em;
+    }
+
+    .menu-toggle {
+      display: none;
+      background-color: #fff;
+      border: 1px solid #333;
+      padding: 0.5em;
+      cursor: pointer;
+    }
+
+    /* Main Layout */
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1em;
+    }
+
+    .blog-posts {
+      flex: 3;
+    }
+
+    .sidebar {
+      flex: 1;
+      background: #f4f4f4;
+      padding: 1em;
+      margin-left: 1em;
+    }
+
+    /* Blog Post Styles */
+    .post {
+      margin-bottom: 1em;
+    }
+
+    .post img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .read-more {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav ul {
+        flex-direction: column;
+        display: none;
+      }
+
+      .nav ul.visible {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-content {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        margin: 1em 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">BlogSite</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="https://www.example.com/home">Home</a></li>
+        <li><a href="https://www.example.com/about">About</a></li>
+        <li><a href="https://www.example.com/blog">Blog</a></li>
+        <li><a href="https://www.example.com/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle Navigation">Menu</button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="blog-posts">
+      <article class="post">
+        <img src="https://via.placeholder.com/800x400" alt="Blog Post 1">
+        <h2>Hanging Out with Old Friends</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <a href="https://www.example.com/post1" class="read-more">Read More</a>
+      </article>
+      <article class="post">
+        <img src="https://via.placeholder.com/800x400" alt="Blog Post 2">
+        <h2>Do Not Waste Your Time Today</h2>
+        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        <a href="https://www.example.com/post2" class="read-more">Read More</a>
+      </article>
+    </section>
+    <aside class="sidebar">
+      <h3>Popular Posts</h3>
+      <ul>
+        <li><a href="https://www.example.com/post1">Post 1</a></li>
+        <li><a href="https://www.example.com/post2">Post 2</a></li>
+        <li><a href="https://www.example.com/post3">Post 3</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 BlogSite. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav ul');
+
+      menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('visible');
+      });
+    });
+  </script>
+</body>
+</html>
+
